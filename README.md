@@ -260,7 +260,7 @@ Code kopieren :
 127.0.0.1:1700,127.0.0.1:1680,127.0.0.1:1685
 
 6. Testen
-Stelle sicher, dass der ThingsIX Forwarder korrekt läuft und Daten empfängt. Du kannst dies durch Überprüfung der Docker-Logs sicherstellen:
+   Stelle sicher, dass der ThingsIX Forwarder korrekt läuft und Daten empfängt. Du kannst dies durch Überprüfung der Docker-Logs sicherstellen:
 
 
 Code kopieren : 
