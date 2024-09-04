@@ -1,15 +1,16 @@
 Hier ist eine umfassende Anleitung für die Installation und Konfiguration des ThingsIX Forwarders für ein SX1262 LoRa-Modul auf einem Raspberry Pi. Diese Anleitung berücksichtigt die spezifischen Anforderungen und Einstellungen, um das Modul korrekt zu betreiben.
 
 1. Vorbereitungen
-Stelle sicher, dass dein Raspberry Pi auf dem neuesten Stand ist und Docker installiert ist:
+   Stelle sicher, dass dein Raspberry Pi auf dem neuesten Stand ist und Docker installiert ist:
 
 bash Code kopieren :
 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install docker.io -y
 
-2. Verzeichnisse erstellen
-Erstelle die notwendigen Verzeichnisse für die Konfiguration des ThingsIX Forwarders:
+
+2. Verzeichnisse erstellen 
+   Erstelle die notwendigen Verzeichnisse für die Konfiguration des ThingsIX Forwarders:
 
 bash Code kopieren :
 
@@ -17,7 +18,7 @@ sudo mkdir -p /usr/src/depin/thingsix/forwarder
 sudo sh -c "echo '' > /usr/src/depin/thingsix/gateways.yaml"
 
 3. Konfigurationsdatei für den ThingsIX Forwarder erstellen
-Erstelle die Konfigurationsdatei forwarder_config.yaml mit den entsprechenden Einstellungen für das SX1262 Modul:
+   Erstelle die Konfigurationsdatei forwarder_config.yaml mit den entsprechenden Einstellungen für das SX1262 Modul:
 
 bash Code kopieren : 
 
@@ -232,10 +233,13 @@ SX1262_conf:
         dig_gain: 0
 ' > /usr/src/depin/thingsix/forwarder_config.yaml"
 
+
+
 4. Docker-Container für den ThingsIX Forwarder starten
-Führe den folgenden Befehl aus, um den Docker-Container für den ThingsIX Forwarder zu starten:
+   Führe den folgenden Befehl aus, um den Docker-Container für den ThingsIX Forwarder zu starten:
 
 bash Code kopieren :
+
 sudo docker run -d --restart unless-stopped  \
     --name thingsix \
     --network host \
@@ -245,6 +249,7 @@ sudo docker run -d --restart unless-stopped  \
     --label=com.centurylinklabs.watchtower.enable=true \
     ghcr.io/thingsixfoundation/packet-handling/forwarder:latest \
     --config /etc/thingsix-forwarder/forwarder_config.yaml
+
     
 5. Gateway im Dashboard konfigurieren
 Öffne das lokale Dashboard von Crankk und gehe zu Info > Setup Gateway. Im Feld Forwards to füge ,127.0.0.1:1685 hinzu. Das Feld sollte dann wie folgt aussehen:
