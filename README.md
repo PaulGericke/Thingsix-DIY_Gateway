@@ -231,7 +231,8 @@ SX1262_conf:
         mix_gain: 14
         rf_power: 27
         dig_gain: 0
-        ' > /usr/src/depin/thingsix/forwarder_config.yaml"
+
+' > /usr/src/depin/thingsix/forwarder_config.yaml"
 
 
 
