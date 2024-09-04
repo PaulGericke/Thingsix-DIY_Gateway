@@ -235,6 +235,10 @@ SX1262_conf:
 
 
 
+
+
+
+
 4. Docker-Container für den ThingsIX Forwarder starten
    Führe den folgenden Befehl aus, um den Docker-Container für den ThingsIX Forwarder zu starten:
 
